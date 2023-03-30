@@ -76,20 +76,56 @@
 
 
 // 8.5
-const p1 = new Promise(resolve => {
-  setTimeout(resolve, 10000, "First");
-});
+// const p1 = new Promise(resolve => {
+//   setTimeout(resolve, 10000, "First");
+// });
 
-const p2 = new Promise((resolve, reject) => {
-  setTimeout(reject, 5000, "I hate JS");
-});
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(reject, 5000, "I hate JS");
+// });
 
-const p3 = new Promise(resolve => {
-  setTimeout(resolve, 3000, "Third");
-});
+// const p3 = new Promise(resolve => {
+//   setTimeout(resolve, 3000, "Third");
+// });
 
-const motherPromise = Promise.race([p1, p2, p3]);
+// const motherPromise = Promise.race([p1, p2, p3]);
 
-motherPromise
-  .then(values => console.log(values))
-  .catch(error => console.log(error));
+// motherPromise
+//   .then(values => console.log(values))
+//   .catch(error => console.log(error));
+
+// Promise.race([p1, p2, p3])
+//   .then(values => console.log(values))
+//   .catch(error => console.log(error));
+
+
+
+// 8.6
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(reject, 2000, "First");
+// })
+//   .then(value => console.log(value))
+//   .catch(error => console.log(error))
+//   .finally(() => console.log("I'm done!"));
+
+
+
+// 8.9
+const MOVIE_API_KEY = "75f6ac300ef95ee23a13b015f0ea6906";
+
+
+fetch("https://yts.mx/api/v2/list_movies.json")
+  .then(response => {
+    console.log(response);
+    return response.json();
+  })
+  .then(json => console.log(json))
+  .catch(error => console.log(`X ${error}`));
+
+
+
+
+
+
+
+
