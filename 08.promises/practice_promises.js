@@ -111,9 +111,6 @@
 
 
 // 8.9
-const MOVIE_API_KEY = "75f6ac300ef95ee23a13b015f0ea6906";
-
-
 fetch("https://yts.mx/api/v2/list_movies.json")
   .then(response => {
     console.log(response);
